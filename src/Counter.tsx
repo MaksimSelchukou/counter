@@ -3,33 +3,28 @@ import {Button} from "./components/button/Button";
 import './Counter.css'
 
 
-export const Counter = () => {
-    const [value, setValue] = useState(2)
+type CounterPropsType = {
+    minValue: number
+    maxValue: number
+    incButtonHandler: () => void
+    resetButtonHandler: () => void
+}
 
-    const incButtonHandler = () => {
-         setValue(value + 1)
-        // setValue(Math.pow(value, 2))
-    }
 
-    const resetButtonHandler = () => {
-        setValue(0)
-    }
+export const Counter = ({minValue, maxValue, incButtonHandler, resetButtonHandler}: CounterPropsType) => {
 
-    let maxValue = 5;
-
-    const [state, setState] = useState(false)
 
     return (
         <div className="main">
-            <h1>Counter</h1>
+
             <div className="value">
-                {value}
+                <h1>Counter</h1>
+                <div className="value-count">{minValue}</div>
             </div>
-            <div className="button">
-                {/*<button disabled={value === 5} onClick={incButtonHandler}>inc</button>*/}
-                <Button disabled={value === maxValue} count={value} name={'inc'} callBack={incButtonHandler}/>
-                {/*<button onClick={resetButtonHandler}>reset</button>*/}
-                <Button disabled={value !== maxValue} name={'reset'} callBack={resetButtonHandler} count={value}/>
+
+            <div className="buttons">
+                <Button disabled={minValue === maxValue} count={minValue} name={'inc'} callBack={incButtonHandler}/>
+                <Button disabled={minValue !== maxValue} name={'reset'} callBack={resetButtonHandler} count={minValue}/>
             </div>
         </div>
     );

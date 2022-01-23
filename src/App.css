@@ -1,8 +1,15 @@
 .App {
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /*align-items: center;*/
-  /*text-align: center;*/
+  align-items: center;
+  background-color: #1d232d;
+  height: 100vh;
+
 }
+
+/*.active{*/
+/*  background-color: deepskyblue;*/
+/*}*/
 
