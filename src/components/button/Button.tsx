@@ -15,9 +15,8 @@ export const Button = (props: ButtonType) => {
 
 
     return (
-        <>
-            <button disabled={props.disabled} onClick={buttonOnclickHandler}>{props.name}</button>
-            {/*<button className={props.name === "inc"? "active":""} disabled={props.disabled} onClick={buttonOnclickHandler}>{props.name}</button>*/}
-        </>
+        <div>
+            <button style={{marginTop:"10px"}} disabled={props.disabled} onClick={buttonOnclickHandler}>{props.name}</button>
+        </div>
     );
 };
